@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tiny KlenVina</title>
+    <style>
+        /* CSS styles can be added here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Tiny KlenVina</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Tiny KlenVina Integration</h2>
+        <p>This website can utilize Python scripts for dynamic functionality.</p>
+        <button onclick="runPythonScript()">Run Terminal Output</button>
+        <p id="output"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tiny KlenVIna Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function runPythonScript() {
+            // Example Python script execution
+            var output = document.getElementById("output");
+            output.innerHTML = "Executing Python script..."; // Update output to show script execution
+
+            // Example: Fetching data from a Python script using Fetch API
+            fetch('example.py')
+                .then(response => response.text())
+                .then(data => {
+                    // Display the output of the Python script
+                    output.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There was an error executing the Python script:', error);
+                    output.innerHTML = "Error executing Python script.";
+                });
+        }
+    </script>
+</body>
+
+</html>
